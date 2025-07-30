@@ -2,36 +2,17 @@
 using namespace std;
 
 
-void Userin(vector<int> &in){
-    while(true){
-            int num;
-        cout << "Enter the integer: ";
-        cin >> num;
-        if(cin.fail()){
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "it is not an integer thats why calculating the avg now";
-            return;
-        }
-        else{
-            in.push_back(num);
-        }
-    }
+
+string  q2(string &s){
+    cout << "Enter your string : ";
+    cin >> s;
+    reverse(s.begin() , s.end());
+    return s;
 }
 
 int main(){
-    vector<int> in;
-    Userin(in);
-    int avg;
-    int sum = 0;
-    int c = 0;
-    for(auto i : in){
-        c++;
-        sum+=i;
-    }
-    avg = sum/c;
-    cout << endl;
-    cout << "The avg is " << avg;
-
+    string s ;
+    q2(s);
+    cout << "your string is : " << s;
   return 0;
 }
